@@ -44,7 +44,7 @@ class user
 					$element    =   [ // Массив одной тренировки
 						'TrainingId'=>rand(12,320),
 						'Img'=>'content/upload/treners/'.$treners[rand(0,2)],
-						'Title'=>$Titles[rand(0,4)],
+						'Title'=>$Titles[rand(0,3)],
 						'Type'=>$TrainType[rand(0,1)],
 						'Remain'=>rand(1,7),
 						'Next'=>$days[rand(0,13)],
