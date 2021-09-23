@@ -31,7 +31,20 @@ class user
                     'Data'=>$responseBody
                 ]);
             }
-			elseif ($operation == 'getUserTrainings'){ // Забрать тренировки пользователя
+			elseif ($operation == 'getUserTrainingsByCard'){ // Забрать тренировки пользователя
+					if(!isset($params[0][3])){
+						new ResponseController([
+							'format'=>'JSON',
+							'DATA'=>['status'=>404,'message'=>'После указания ID клуба ожидается ID карты пользователя']
+						]);
+					}
+				if(!isset($params[0][2])){
+					new ResponseController([
+						'format'=>'JSON',
+						'DATA'=>['status'=>404,'message'=>'После указания метода ожидается ID клуба']
+					]);
+				}
+					$CardID=$params[0][2];
 					$count = rand(8,24); // Количество Элементов тренировок в массиве ответов
 					$treners    =   ['trener1.jpg','trener3.jpeg','trener5.jpg'];
 					$Titles     =   ['Йога','Силовая','Кардио','Другая'];
