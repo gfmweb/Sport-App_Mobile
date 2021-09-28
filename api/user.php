@@ -37,6 +37,7 @@ class user
 							'format'=>'JSON',
 							'DATA'=>['status'=>404,'message'=>'После указания ID клуба ожидается ID карты пользователя']
 						]);
+						die();
 					}
 				if(!isset($params[0][2])){
 					new ResponseController([
